@@ -1,0 +1,17 @@
+
+html, body {
+    background-color: #ffef96;
+}
+
+.nameBox {
+    background-color: white;
+    width: 200px;
+    height: 50px;
+    float: left;
+    clear: left;
+}
+
+.change-devour {
+    clear: right;
+    margin: 10px;
+}

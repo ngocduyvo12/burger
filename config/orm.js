@@ -47,17 +47,19 @@ var orm = {
       if (err) {
         throw err;
       }
-      console.log(results)
+      // console.log("orm.js result:")
+      // console.log(results)
       cb(results)
     });
   },
 
-  //INSERT INTO burgers (burger_name, devoured) VALUES ("Hot n spicy", false);
+  //INSERT INTO burgers (burger_name) VALUES ("egg n ham");
 
-  insertOne: function(burgerName, devour, cb) {
-    var queryString = `INSERT INTO burgers (burger_name, devoured) VALUES (${burgerName}, ${devour})`
+  insertOne: function(burgerName, cb) {
+    console.log(burgerName)
+    var queryString = `INSERT INTO burgers (burger_name) VALUES ("${burgerName}")`
     console.log(queryString);
-    connection.query(queryString, function(err, result) {
+    connection.query(queryString, function(err, results) {
       if (err) {
         throw err;
       }

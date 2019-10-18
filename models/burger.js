@@ -3,33 +3,26 @@ var orm = require("../config/orm.js")
 
 
 var burger = {
-    selectAll: function(data){
+    selectAll: function(cb){
         orm.selectAll(function(res){
+            // console.log(`models burger.js:`)
+            // console.log(res)
             cb(res)
         })
-        console.log(data)
+
     },
-    // The variables cols and vals are arrays.
-  
-    //.create(columns, values, cb)
-    // cols = "name" "sleepy"
-    insertOne: function(burgerName, devourState, cb) {
-  
-      //.create("cats", ["name", "sleepy"], [req.body.name, req.body.sleepy], cb])
-      orm.insertOne(burgerName, devourState, function(res) {
+
+    insertOne: function(burgerName, cb) {
+      orm.insertOne(burgerName, function(res) {
         cb(res);
       });
     },
-    
-    // The variables cols and vals are arrays.
   
-    //.create(columns, values, cb)
-    // cols = "name" "sleepy"
     updateOne: function(devourState,burgerId, cb) {
-  
-      //.create("cats", ["name", "sleepy"], [req.body.name, req.body.sleepy], cb])
-      orm.insertOne(devourState, burgerId, function(res) {
+      orm.updateOne(devourState, burgerId, function(res) {
         cb(res);
       });
     },
 }
+
+module.exports = burger;

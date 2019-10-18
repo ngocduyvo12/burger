@@ -1,0 +1,61 @@
+<div class="container">
+
+    <div class="row justify-content-center">
+
+        <h1>Eat da Burgers</h1>
+    </div>
+
+    <div class="row justify-content-around">
+        <div class="col col-md-4">
+
+            <h2>Burgers to eat</h2>
+            <div class="burgers-to-eat">
+
+                {{!-- <ul> --}}
+                {{#each burgers}}
+                    {{#unless devoured}}
+                        {{> burger/burger-block devour=true}}
+                    {{/unless}}
+                {{/each}}
+                {{!-- </ul> --}}
+
+            </div>
+        </div>
+
+        <div class="col col-md-4">
+
+            <h2>Devoured burgers</h2>
+
+            <div class="devoured-burgers">
+                <ul>
+                    {{#each burgers}}
+                        {{#if devoured}}
+                        <li>
+
+                            {{burger_name}}
+                        </li>
+                        {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <div class="row justify-content-center">
+
+        <h2>Add a burger</h2>
+    </div>
+
+    <div class="row justify-content-center">
+
+        <form class="create-form" style="text-align: center;">
+            <div class="form-group">
+                <label for="burger">burger Name:</label>
+                <input type="text" id="burger" name="name">
+            </div>
+
+            <button type="submit">Add burger</button>
+        </form>
+    </div>
+
+</div>
