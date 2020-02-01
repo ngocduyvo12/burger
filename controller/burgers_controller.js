@@ -13,8 +13,7 @@ router.get("/", function(req, res) {
     var hbsObject = {
       burgers: data
     };
-    console.log(`burgers_controller hbsobj:`)
-    console.log(data);
+
     res.render("index", hbsObject);
   });
 });
