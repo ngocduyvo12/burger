@@ -56,7 +56,6 @@ var orm = {
   //INSERT INTO burgers (burger_name) VALUES ("egg n ham");
 
   insertOne: function(burgerName, cb) {
-    console.log(burgerName)
     var queryString = `INSERT INTO burgers (burger_name) VALUES ("${burgerName}")`
     console.log(queryString);
     connection.query(queryString, function(err, results) {
