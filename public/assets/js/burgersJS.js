@@ -11,9 +11,6 @@ $(function() {
         var newDevourState = {
             state: newState
         };
-        console.log(`id: ${id}`)
-        console.log(`devour: ${newState}`)
-        console.log(`name: ${name}`);
 
         // Send the PUT request.
         $.ajax("/api/burgers/" + id, {
