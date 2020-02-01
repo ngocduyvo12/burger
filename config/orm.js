@@ -71,7 +71,6 @@ var orm = {
 
   updateOne: function(devourState, burgerId, cb) {
     var queryString = `UPDATE burgers SET devoured = ${devourState} WHERE id=${burgerId}`
-    console.log(queryString);
     connection.query(queryString, function(err, results) {
       if (err) {
         throw err;
