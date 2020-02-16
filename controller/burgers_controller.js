@@ -17,7 +17,7 @@ router.get("/", function(req, res) {
     res.render("index", hbsObject);
   });
 });
-
+//post route api
 router.post("/api/burgers", function(req, res) {
   burger.insertOne(req.body.name, function(result) {
     // Send back the ID of the new quote
@@ -27,7 +27,6 @@ router.post("/api/burgers", function(req, res) {
 
 router.put("/api/burgers/:id", function(req, res) {
   var condition = "id = " + req.params.id;
-
   burger.updateOne(req.body.state, req.params.id, function(result) {
     if (result.changedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
