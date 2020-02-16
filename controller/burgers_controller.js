@@ -13,7 +13,7 @@ router.get("/", function(req, res) {
     var hbsObject = {
       burgers: data
     };
-
+    //render burger object into index
     res.render("index", hbsObject);
   });
 });
