@@ -47,13 +47,9 @@ var orm = {
       if (err) {
         throw err;
       }
-      // console.log("orm.js result:")
-      // console.log(results)
       cb(results)
     });
   },
-
-  //INSERT INTO burgers (burger_name) VALUES ("egg n ham");
 
   insertOne: function(burgerName, cb) {
     var queryString = `INSERT INTO burgers (burger_name) VALUES ("${burgerName}")`
@@ -67,7 +63,6 @@ var orm = {
     });
   },
   // An example of objColVals would be {name: panther, sleepy: true}
-  //UPDATE burgers SET devoured = true WHERE id = 2;
 
   updateOne: function(devourState, burgerId, cb) {
     var queryString = `UPDATE burgers SET devoured = ${devourState} WHERE id=${burgerId}`
