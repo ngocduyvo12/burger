@@ -29,6 +29,7 @@ $(function() {
         // Make sure to preventDefault on a submit event.
         event.preventDefault();
 
+        //new burger variable for assigning name object
         var newBurger = {
             name: $("#burger").val().trim(),
         };
